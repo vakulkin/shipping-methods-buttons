@@ -1,0 +1,264 @@
+/**
+ * Custom Shipping Buttons Styles - Professional Black Theme
+ *
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   CSS Variables for Consistent Theming
+   ========================================================================== */
+
+:root {
+    --smb-primary-color: #000000;
+    --smb-primary-hover: #333333;
+    --smb-primary-active: #000000;
+    --smb-text-light: #ffffff;
+    --smb-text-dark: #374151;
+    --smb-border-color: #d1d5db;
+    --smb-border-hover: #9ca3af;
+    --smb-background-default: #f9fafb;
+    --smb-background-hover: #f3f4f6;
+    --smb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --smb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --smb-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --smb-border-radius: 6px;
+    --smb-border-radius-lg: 8px;
+    --smb-spacing-xs: 4px;
+    --smb-spacing-sm: 6px;
+    --smb-spacing-md: 8px;
+    --smb-spacing-lg: 10px;
+    --smb-spacing-xl: 12px;
+    --smb-spacing-2xl: 16px;
+}
+
+/* ==========================================================================
+   Hide Original WooCommerce Shipping Elements
+   ========================================================================== */
+
+#billing_country_field,
+.woocommerce-shipping-fields,
+.woocommerce-shipping-totals.shipping {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Main Container
+   ========================================================================== */
+
+.custom-shipping-buttons-wrapper {
+    margin: var(--smb-spacing-2xl) 0;
+    padding: var(--smb-spacing-xl);
+    background: var(--smb-background-default);
+    border: 1px solid var(--smb-border-color);
+    border-radius: var(--smb-border-radius-lg);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: var(--smb-spacing-xl);
+        right: var(--smb-spacing-xl);
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--smb-primary-color), transparent);
+    }
+}
+
+/* ==========================================================================
+   Shipping Buttons Container & Base Styles
+   ========================================================================== */
+
+.custom-shipping-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smb-spacing-xs);
+    min-height: 32px;
+    align-items: stretch;
+
+    &.loading {
+        opacity: 0.7;
+        pointer-events: none;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--smb-spacing-2xl);
+            height: var(--smb-spacing-2xl);
+            margin: calc(var(--smb-spacing-2xl) / -2) 0 0 calc(var(--smb-spacing-2xl) / -2);
+            border: 2px solid transparent;
+            border-top-color: var(--smb-primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+    }
+}
+
+/* ==========================================================================
+   Shipping Button Base Styles
+   ========================================================================== */
+
+.shipping-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: var(--smb-spacing-xs) var(--smb-spacing-xl);
+    background: var(--smb-background-default);
+    border: 1px solid var(--smb-border-color);
+    border-radius: var(--smb-border-radius);
+    color: var(--smb-text-dark);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--smb-transition);
+    position: relative;
+    text-transform: none !important;
+    line-height: 1.4;
+    white-space: normal;
+    word-wrap: break-word;
+    box-shadow: var(--smb-shadow-sm);
+    user-select: none;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+
+    /* State variations */
+    &:hover {
+        background-color: var(--smb-background-hover);
+        border-color: var(--smb-border-hover);
+        box-shadow: var(--smb-shadow-md);
+        transform: translateY(-1px);
+    }
+
+    &:focus {
+        outline: 2px solid var(--smb-primary-color);
+        outline-offset: 2px;
+        box-shadow: var(--smb-shadow-md), 0 0 0 2px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: var(--smb-shadow-sm);
+    }
+
+    &.selected {
+        background: var(--smb-primary-color) !important;
+        border-color: var(--smb-primary-active) !important;
+        color: var(--smb-text-light) !important;
+        box-shadow: var(--smb-shadow-md) !important;
+        font-weight: 600 !important;
+
+        &:hover {
+            background: var(--smb-primary-hover) !important;
+            border-color: var(--smb-primary-active) !important;
+            color: var(--smb-text-light) !important;
+        }
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Error States
+   ========================================================================== */
+
+.custom-shipping-buttons .error {
+    color: #dc3545;
+    font-size: 13px;
+    text-align: center;
+    padding: var(--smb-spacing-xs);
+    margin: 0;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: var(--smb-border-radius);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .custom-shipping-buttons-wrapper {
+        margin: var(--smb-spacing-lg) 0;
+        padding: var(--smb-spacing-lg);
+    }
+
+    .custom-shipping-buttons {
+        gap: var(--smb-spacing-sm);
+    }
+
+    .shipping-btn {
+        min-width: 90px;
+        padding: var(--smb-spacing-sm) var(--smb-spacing-lg);
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-shipping-buttons-wrapper {
+        margin: var(--smb-spacing-xs) 0;
+        padding: var(--smb-spacing-xs);
+    }
+
+    .custom-shipping-buttons {
+        flex-direction: column;
+        gap: var(--smb-spacing-xs);
+
+        &.loading::after {
+            width: 18px;
+            height: 18px;
+            margin: -9px 0 0 -9px;
+        }
+    }
+
+    .shipping-btn {
+        min-width: auto;
+        width: 100%;
+        padding: var(--smb-spacing-lg) var(--smb-spacing-xl);
+        font-size: 14px; /* Prevent zoom on iOS */
+    }
+}
+
+/* ==========================================================================
+   Accessibility & Special Cases
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .shipping-btn {
+        border-width: 2px;
+
+        &.selected {
+            background: #000000 !important;
+            border-color: #000000 !important;
+            color: #ffffff !important;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shipping-btn {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    .custom-shipping-buttons.loading::after {
+        animation: none;
+    }
+}
+
+@media print {
+    .custom-shipping-buttons-wrapper {
+        display: none;
+    }
+}
