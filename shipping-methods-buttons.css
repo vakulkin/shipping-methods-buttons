@@ -73,7 +73,7 @@
     flex-wrap: wrap;
     gap: var(--smb-spacing-xs);
     min-height: 32px;
-    align-items: stretch;
+    align-items: center;
 
     &.loading {
         opacity: 0.7;

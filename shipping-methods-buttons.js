@@ -4,7 +4,7 @@
  * @version 1.0.0
  */
 
-(function($) {
+(function ($) {
     'use strict';
 
     /**
@@ -206,7 +206,6 @@
             buttons.forEach(button => {
                 const $btn = $(button);
                 const isSelected = $btn.data('shipping-id') === selectedId;
-                const methodId = $btn.data('methodId');
 
                 // Batch attribute updates
                 const attrs = {
