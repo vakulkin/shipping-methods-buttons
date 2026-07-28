@@ -103,7 +103,8 @@
 .shipping-btn {
     flex: 1;
     min-width: 100px;
-    padding: var(--smb-spacing-xs) var(--smb-spacing-xl);
+    max-width: calc(33.333% - 2.66px);
+    padding: var(--smb-spacing-xs) var(--smb-spacing-md);
     background: var(--smb-background-default);
     border: 1px solid var(--smb-border-color);
     border-radius: var(--smb-border-radius);
@@ -198,7 +199,8 @@
 
     .shipping-btn {
         min-width: 90px;
-        padding: var(--smb-spacing-sm) var(--smb-spacing-lg);
+        max-width: calc(33.333% - 2.66px);
+        padding: var(--smb-spacing-sm) var(--smb-spacing-md);
         font-size: 12px;
     }
 }
@@ -223,7 +225,8 @@
     .shipping-btn {
         min-width: auto;
         width: 100%;
-        padding: var(--smb-spacing-lg) var(--smb-spacing-xl);
+        max-width: none;
+        padding: var(--smb-spacing-lg) var(--smb-spacing-lg);
         font-size: 14px; /* Prevent zoom on iOS */
     }
 }
