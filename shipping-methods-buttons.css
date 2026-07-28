@@ -102,7 +102,7 @@
 
 .shipping-btn {
     width: 100%;
-    padding: var(--smb-spacing-xs) var(--smb-spacing-md);
+    padding: var(--smb-spacing-xs) var(--smb-spacing-md) !important;
     background: var(--smb-background-default);
     border: 1px solid var(--smb-border-color);
     border-radius: var(--smb-border-radius);
@@ -162,8 +162,13 @@
    ========================================================================== */
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* ==========================================================================
@@ -196,7 +201,7 @@
     }
 
     .shipping-btn {
-        padding: var(--smb-spacing-sm) var(--smb-spacing-md);
+        padding: var(--smb-spacing-sm) var(--smb-spacing-md) !important;
         font-size: 12px;
     }
 }
@@ -219,8 +224,9 @@
     }
 
     .shipping-btn {
-        padding: var(--smb-spacing-lg) var(--smb-spacing-lg);
-        font-size: 14px; /* Prevent zoom on iOS */
+        padding: var(--smb-spacing-lg) var(--smb-spacing-md) !important;
+        font-size: 14px;
+        /* Prevent zoom on iOS */
     }
 }
 
