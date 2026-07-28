@@ -71,7 +71,7 @@
 
 .custom-shipping-buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--smb-spacing-xs);
     min-height: 32px;
     align-items: center;
