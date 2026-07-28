@@ -46,6 +46,7 @@
    ========================================================================== */
 
 .custom-shipping-buttons-wrapper {
+    clear: both;
     margin: var(--smb-spacing-2xl) 0;
     padding: var(--smb-spacing-xl);
     background: var(--smb-background-default);
