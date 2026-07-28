@@ -65,13 +65,6 @@
     }
 }
 
-.custom-shipping-buttons-title {
-    margin: 0 0 var(--smb-spacing-lg) 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--smb-text-dark);
-}
-
 /* ==========================================================================
    Shipping Buttons Container & Base Styles
    ========================================================================== */
