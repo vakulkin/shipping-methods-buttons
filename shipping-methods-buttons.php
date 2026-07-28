@@ -62,7 +62,7 @@ class CustomShippingButtons {
      * @since 1.0.0
      */
     private function init_hooks() {
-        add_action('woocommerce_before_checkout_billing_form', [$this, 'add_shipping_buttons_container'], 5);
+        add_action('woocommerce_after_checkout_billing_form', [$this, 'add_shipping_buttons_container'], 5);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
