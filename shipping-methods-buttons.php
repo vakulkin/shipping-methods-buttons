@@ -77,6 +77,7 @@ class CustomShippingButtons {
         }
 
         echo '<div id="custom-shipping-buttons-wrapper" class="custom-shipping-buttons-wrapper" role="radiogroup" aria-label="' . esc_attr__('Select Shipping Method', self::TEXT_DOMAIN) . '">
+                <h3 class="custom-shipping-buttons-title">' . esc_html__('Метод доставки', self::TEXT_DOMAIN) . '</h3>
                 <div class="custom-shipping-buttons" aria-live="polite"></div>
               </div>';
     }
